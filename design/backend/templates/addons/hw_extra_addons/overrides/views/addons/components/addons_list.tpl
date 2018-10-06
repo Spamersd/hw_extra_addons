@@ -104,10 +104,10 @@
                             {/if}
                             {if $a.delete_url}
                                 {** added by Hungryweb **}
-                                {hook name="addons:delete_url"}                            
+                                {hook name="addons:delete_url"}
                                 <li>{btn type="list" class="cm-confirm" text=__("uninstall") data=['data-ca-target-id'=>'addons_list,header_navbar,main_menu'] href=$a.delete_url method="POST"}</li>
                                 {/hook}
-                                {** end **}                                
+                                {** end **}
                             {/if}
                             {if $a.refresh_url}
                                 <li>{btn type="list" text=__("refresh") href=$a.refresh_url method="POST"}</li>
@@ -123,8 +123,8 @@
                         {if !$hide_for_vendor}
                         <div class="pull-right">
                             {** added by Hungryweb **}
-                            {hook name="addons:install"}                            
-                            <a class="btn lowercase cm-post {if $a.snapshot_correct}cm-ajax cm-ajax-full-render{else}cm-promo-popup{/if}" href="{"addons.install?addon=`$key`&redirect_url=$c_url"|fn_url}" data-ca-target-id="addons_list,header_navbar,main_menu,addons_counter">{__("install")}</a>
+                            {hook name="addons:install"}
+                            <a class="btn lowercase cm-post {if $a.snapshot_correct}cm-ajax cm-ajax-full-render{else}cm-promo-popup{/if}" href="{"addons.install?addon=`$key`&return_url=`$c_url|escape:url`"|fn_url}" data-ca-target-id="addons_list,header_navbar,main_menu,addons_counter">{__("install")}</a>
                             {/hook}
                             {** end **}
                         </div>
